@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lomaý söwda</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'images/img/logo_circle.png' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/style/video.css' %}">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="{% static 'css/css2.css?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap' %}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="{% static 'css/css2-1.css?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' %}" rel="stylesheet">
+
+</head>
+<body>
+    
+<!--Form START-->
+
+<!--Form END-->
+
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="header_text">
+            <h1>10 GÜNÜŇ IÇINDE <span>SATUWŇYZY 2 ESSE </span>KÖPELTMEK ISLEÝÄŇIZMI?
+            </h1>
+        </div>
+        {% for p in player %}
+        <div class="video">
+            <video poster="{{p.img.url}}" id="video100" controlslist="nodownload">
+                <source src="{{p.video.url}}" type="video/mp4"> </source>
+              Wideo Siziň Browseryňyzda Açylyp Bilmedi !
+              </video>
+              <div class="play_button" onclick="startVideo()">
+                <img src="{% static 'images/img/play.png' %}" alt="Play">
+              </div>
+        </div>
+        {% endfor %}
+
+        <script>
+            const videoTag = document.getElementById('video100');
+            let start = 0;
+            let end = 0;
+            videoTag.addEventListener('play', (e) => {
+                
+                start= e.target.currentTime
+            })
+            videoTag.addEventListener('pause', (e) => {
+                end = e.target.currentTime
+                console.log(end)
+                console.log(e.target.duration)
+            })
+            console.log(end - start);
+            
+        </script>
+    
+        <style>
+            video {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        <div class="video_button">
+            <a href="https://icq.im/yonekeyhk" style="color: white;">Lomaý söwda başlajak.</a>
+        </div>
+        <div class="header_text_2">
+            <h2>Bular ýaly mümkinçilik <span>başga ýerde </span>ýok</h2>
+        </div>
+        <div class="devices">
+            <img src="{% static 'images/img/devices.png' %}" alt="Devices">
+        </div>
+        <div class="image_p">Aşakdaky linka bas we Lomaý söwda başla..</div>
+        <div class="image_button">
+            <a href="https://icq.im/yonekeyhk" style="color: white;">Lomaý söwda başlajak.</a>
+        </div>
+        <div class="header_text_3">
+            <h2>ONLINE <span>100.000$</span> Gazanmagyň <span>6 syry</span> ädimleýin doly görnuşüni öz addresiňa <span>zakaz et</span> we Ömürlik okuwyna çatyl.</h2>
+            <h3>"Şugün bahasy <span>197$</span>" Webinar tamamlanansoň bahasy <span>1997$</span> galar"</h3>
+            <p>(Pul gazanmagyň üçin Pul gerekdäl bilim gerek) Kesha Rejepow</p>
+        </div>
+        <div class="devices">
+            <img src="{% static 'images/img/devices.png' %}" alt="Devices">
+        </div>
+        <div class="footer_button">
+            <div class="footer_button_text" o="">
+                <a href="https://icq.im/yonekeyhk"><h4>Hawa ! Satyn Aljak Ädimme Ädim Sistemasyny.</h4>
+                <p>Men taýyn bilimimi ulaltjak öwrenjek bary ýogy 197$</p></a>
+            </div>
+        </div>
+            
+    </div>
+    
+    <div class="fast_contact">
+        <h4>Göni şuwagt satyn aljaklar üçin</h4>
+        <div class="fast_contact_social_media">
+            <a href="https://www.instagram.com/kesharejepow/"><img src="{% static 'images/img/instagram.png' %}" alt="" width="30px">@kesharejepow</a>
+            <a href="tel:+99362822247"><img src="{% static 'images/img/phone.png' %}" alt="" width="30px">+993 62822247</a>
+            <a href="live:.cid.dbc4635c3e85ef9f"><img src="{% static 'images/img/skype.png' %}" alt="" width="30px">Skype</a>
+        </div>
+    <footer>
+        <div class="footer_container">
+                <img src="{% static 'images/img/kesha_logo.png' %}" alt="">
+                <p>Üstünlik zähmetiň, bilimiň we çydamlylygyñ netijesidigine ynanýarys. Berlen mysallar adaty bolmak üçin niýetlenen däldir we netijeler hiç haçan kepillendirilmeýär. Berilýän maglumatlar diňe bilim maksatly bolup, kanuny ýa-da maliýe maslahatyny düzmeýär. Bu web sahypasyny ýa-da oňa bagly islendik materialy ulanmak bilen, öz netijeleriňiz üçin doly jogapkärçiligi öz üstüňize alýarsyňyz.</p>
+                <p>Biziň komandamyz sizi goldamak maksady bilen bu ýerde, ýöne siz  inwestisiýa we risk etmezden öñ seresaplylygy berjaý etmelisiñiz.
+                    Üstünlik - bu siziñ borjuñyz we jogapkärçiligiñizdir. 
+                    
+                    Ähli hukuklar goragly.</p>
+         </div>
+    </footer>
+<script>
+   
+    function startVideo(){
+      var video = document.getElementById("video100");
+      var playBtn = document.querySelector(".play_button");
+      video.play();
+      video.setAttribute("controls","");
+      playBtn.style.display = "none";
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    function menu(){
+        document.querySelector(".form").classList.toggle("form_toggle")
+    };
+    function focusNomer() {
+        document.querySelector("#nomerTel").value = "+"
+    }
+</script>
+</div></body>
+</html>
