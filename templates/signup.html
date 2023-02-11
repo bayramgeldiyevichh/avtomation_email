@@ -39,7 +39,7 @@
                         font-weight: bold;
                     }
                 </style>
-                <form class="flex flex-col pt-3 md:pt-8" method="post" action="">
+                <form class="flex flex-col pt-3 md:pt-8" method="post" action="{% url 'signup' %}">
                     {% csrf_token %}
                     <div class="flex flex-col pt-4">
                         <label for="name" class="text-lg">Adyňyz</label>
@@ -47,11 +47,11 @@
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
                     </div>
 
-                    <div class="flex flex-col pt-4">
+                    <!-- <div class="flex flex-col pt-4">
                         <label for="name" class="text-lg">Telefon belgiňiz</label>
                         <input type="tel" name="mobile" id="tel" placeholder="+99365656565 "
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
-                    </div>
+                    </div> -->
 
 
                     <div class="flex flex-col pt-4">
@@ -76,7 +76,7 @@
                         class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
                 </form>
                 <div class="text-center pt-12 pb-12">
-                    <p>Öň hasabyňyz bar bolsa? <a href="{% url 'login' %}" class="underline font-semibold">Login boluň!</a>
+                    <p>Öň hasabyňyz bar bolsa? <a href="{% url 'signin' %}" class="underline font-semibold">Login boluň!</a>
                     </p>
                 </div>
             </div>

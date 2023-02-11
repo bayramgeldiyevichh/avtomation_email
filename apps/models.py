@@ -1,58 +1,21 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,BaseUserManager
 
-#Create your CustomUserManager here.
-class CustomUserManager(BaseUserManager):
-    def _create_user(self, email, password, username, mobile, **extra_fields):
-        if not email:
-            raise ValueError("Email must be provided")
-        if not password:
-            raise ValueError('Password is not provided')
+from django.contrib.auth.models import AbstractUser
 
-        user = self.model(
-            email = self.normalize_email(email),
-            username = username,
-            mobile = mobile,
-            **extra_fields
-        )
-
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_user(self, email, password, username, mobile, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_active', True)
-        extra_fields.setdefault('is_superuser', False)
-        return self._create_user(email, password, username, mobile, **extra_fields)
-
-    
-    def create_superuser(self, email, password, username, mobile, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_active', True)
-        extra_fields.setdefault('is_superuser', True)
-        return self._create_user(email, password, username, mobile, **extra_fields)
-
-
-#Create your User Model here.
-class User(AbstractBaseUser,PermissionsMixin):
-    email = models.EmailField(max_length=254, unique=True)
-    username = models.CharField(max_length=250)
-    mobile = models.CharField(max_length=250)
-
-    is_staff = models.BooleanField(default=True)
-    is_active = models.BooleanField(default=True)
-    is_superuser = models.BooleanField(default=False)
-
-    objects = CustomUserManager()
+class User(AbstractUser):
+    username = models.CharField(max_length=120)
+    email = models.EmailField(max_length=120, unique=True)
+    password = models.CharField(max_length=120)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'mobile']
+    REQUIRED_FIELDS = ['username']
 
     class Meta:
         verbose_name = 'Ulanyjy'
         verbose_name_plural = 'Ulanyjylar'
-
+    
+    def __str__(self):
+        return self.email
 
 
 #edit video
