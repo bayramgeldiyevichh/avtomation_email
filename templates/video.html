@@ -38,7 +38,7 @@
         </div>
         {% for p in player %}
         <div class="video">
-            <form action="{% url 'video' %}" method="post" id="form">
+            <form action="{% url 'video' %}" method="post" id="form" style="display: none;">
                 {% csrf_token %}
                 <input type="text" name="userId" , value="{{request.user.id}}">
                 <input type="text" name="videoId" value="{{p.id}}">
@@ -50,7 +50,7 @@
                 <source src="{{p.video.url}}" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <span id="time">0.0</span>
+              <span id="time" style="display: none;">0.0</span>
             <!-- <video poster="{{p.img.url}}" id="video100" controlslist="nodownload">
                 <source src="{{p.video.url}}" type="video/mp4">
                 </source>

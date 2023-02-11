@@ -11,7 +11,7 @@ def sendEmail():
     video = ControlVideo.objects.all()
     for i in video:
         if i.gorulen_aralayk != i.doly_wagty:
-            emailSubject = "Ýönekeý H.K-nyň Webinar saýty size hödürleýär"
+            emailSubject = "Ýönekeý H.K-y"
             message = "Wideony doly gormegi maslahat beryaris, size gyzykly maglumatlar garashyar"
             email = EmailMessage(
                 emailSubject,
