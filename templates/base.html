@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
@@ -27,42 +27,27 @@
         <div class="header_text">
             <h1>BEÝLEKILERIŇ SIZE <span> LOMAÝ </span>SÖWDA HAKDA AÝTMAJAK 25 ZADY..</h1>
         </div>
-        <div class="banner">
-            <img src="{% static 'images/img/1.jpg' %}" alt="Image">
-        </div>
         <div class="header_text_2" id="header">
             <h1>GIJÄ GALMADA <span> LOMAÝ </span>SÖWDA BAŞLA!
             </h1>
         </div>
-        <ul class="list">
-            <li><img src="{% static 'images/img/tick.png' %}" alt="Tick">Kesha Rejepow Lomaý söwda başla.</li>
-            <li><img src="{% static 'images/img/tick.png' %}" alt="Tick">Onlaýn iň arzan bahadan sargyt et.</li>
-            <li><img src="{% static 'images/img/tick.png' %}" alt="Tick">Seniň isleýän ähli harydyňy biz getireli.</li>
-        </ul>
         <div class="img" id="iframe">
             <img src="{% static 'images/img/yone.png' %}">
         </div>
-
-        <form action="{% url 'signup' %}" method="post" >
+        <form action="{% url 'signin' %}" method="post" >
             {% csrf_token %}
             <div class="container">
-
-              <label for="username"><b>Ady*</b></label>
-              <input type="text" placeholder="Adyňyzy giriziň" id="username" name="username" required>
+              <h1>Login</h1>
           
               <label for="email"><b>Email*</b></label>
-              <input type="text" placeholder="Email poçtaňyz" id="email" name="email" required>
-
-              <label for="phone"><b>Telefon nomer*</b></label>
-              <input type="tel" placeholder="Telefon nomeriňiz" id="phone" name="phone" required>
+              <input type="text" placeholder="Email poçtaňyz" id="username" name="email" required>
           
               <label for="psw"><b>Parol*</b></label>
-              <input type="password" placeholder="Enter Password" name="password" required>
+              <input type="password" placeholder="Parolyňyzy giriziň" name="password" required>
+
+              <center><label>{{ msg }}</label></center>
           
-              <!-- <label for="psw-repeat"><b>Parolyňyzy tassyklaň*</b></label>
-              <input type="password" placeholder="Repeat Password" name="password2" required> -->
-          
-              <button type="submit" class="registerbtn">Register</button>
+              <button type="submit" class="registerbtn">Login</button>
             </div>
           </form>
 
@@ -126,22 +111,6 @@
                 text-align: center;
             }
         </style>
-        <div class="header_text_3">
-            <span></span>TÜRKMENISTANDA IÑ AMATLY LOMAÝ SÖWDA BAZARY
-        </div>
-        <div class="avatar">
-            <img src="{% static 'images/img/12.png' %}" alt=""><img src="{% static 'images/img/123.png' %}" alt=""><img src="{% static 'images/img/1234.png' %}" alt="">
-        </div>
-        <div class="container_p">
-            <p>Yonekey lomaý söwda internet platformasy Turkmenistanyñ islendik lomaý dükanlaryndan yokary derejeli hili we amatly bahasy bilen alyjynyñ ünsüni çekýär. Bizde siz göwnüñize ýarajak we islegleriñizi kanagatlandyrjak islendik brenddaky we görnüşdäki harytlary, ýagny gözellik serişdelerinden başlap tehniki enjamlaryna çenli ylalaşykly bahadan satyn alyp bilersiňiz. Bellenen wagtyñ içinde çalt we bitewilikde yurdumyzyñ ähli welaýatlaryna we şäherlerine eltip bermek hyzmaty bilen üpjün edilersiñiz.</p>
-            
-        </div>
-        <a href="#iframe" class="footer_button" onclick="focusTo()">
-            <div class="button_text">
-                MUGT REGISTRASIÝA ET ŞUWAGT
-                <div class="button_text_p">Öwren Kesha Rejepow bilen & Oturan ýeriňde</div>
-            </div>
-        </a>
 
         </div>
     
@@ -155,15 +124,5 @@
                     Ähli hukuklar goragly.</p>
          </div>
     </footer>
-    <script>
-        function focusTo() {
-            document.getElementById('input').focus()
-        }
-    function focusNomer() {
-        document.querySelector("#nomerTel").value = "+"
-    }
-    </script>
-    
-     <a href="satuw.html" class="h_d_i">salam</a>
 </body>
 </html>
